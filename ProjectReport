@@ -1,1 +1,2 @@
-The output of the crosstab() function reveals that there are more men who have smoked 100+ cigarettes in their lifetime than there are women who have. The ratio of women who've smoked in this study versus those who haven't is 0.73, whereas for men the ratio is 1.1. 
+The output of the crosstab() function reveals that there are more men who have smoked 100+ cigarettes in their lifetime than there are women who have. 
+The ratio of women who've smoked in this study versus those who haven't is 0.73, whereas for men the ratio is 1.1. 
