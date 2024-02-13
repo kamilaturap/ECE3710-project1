@@ -39,9 +39,16 @@ plt.title('Relative Frequency Distribution for Exercise')
 plt.xlabel('Exercised in the Past Month')
 plt.ylabel('Relative Frequency')
 plt.xticks(ticks=[0, 1], labels=['Yes', 'No'], rotation=0) 
-
 plt.tight_layout()
 plt.show()
+
+# Gets frequency of proportion of sample that is female (noted at 'f' in the csv file)
+prop_female = gender_freq.get('f', 0)  
+print(f"Proportion of the sample that is female: {prop_female:.2f}")
+
+# Proportion that has exercised in the past month (noted at '1' in the csv file for yes, and '0' for no)
+prop_exercised = exerany_freq.get(1, 0)  
+print(f"Proportion that has exercised in the past month: {prop_exercised:.2f}")
 
 # Shows the crosstab between smoking habits and gender. 
 crosstab = pd.crosstab(csv_data['gender'], csv_data['smoke100'])
