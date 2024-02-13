@@ -20,11 +20,27 @@ q3_age = csv_data['age'].quantile(0.75)
 iqr_age = q3_age - q1_age
 print(f"IQR for Age: {iqr_age}")
 
-# I think this is how we are able to find mean using the matplotlib libary. 
-test = csv_data["height"].mean()
-print(test)
+# Used to count occurences of each value in the column (for Gender and Exerany)
+gender_freq = csv_data['gender'].value_counts(normalize=True)
+exerany_freq = csv_data['exerany'].value_counts(normalize=True)
 
+# Subplot for gender size 
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 2, 1)
+gender_freq.plot(kind='bar', color=['blue', 'pink'])
+plt.title('Relative Frequency Distribution by Gender')
+plt.xlabel('Gender')
+plt.ylabel('Relative Frequency')
 
+# Subplot for exerany data
+plt.subplot(1, 2, 2) # This must be 1, 2, 2 because we have 1 row and 2 columns, anything less will not show graph on layout. 
+exerany_freq.plot(kind='bar', color=['green', 'red'])
+plt.title('Relative Frequency Distribution for Exercise')
+plt.xlabel('Exercised in the Past Month')
+plt.ylabel('Relative Frequency')
+plt.xticks(ticks=[0, 1], labels=['Yes', 'No'], rotation=0) 
 
+plt.tight_layout()
 plt.show()
+
 
