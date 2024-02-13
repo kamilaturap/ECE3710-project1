@@ -43,4 +43,6 @@ plt.xticks(ticks=[0, 1], labels=['Yes', 'No'], rotation=0)
 plt.tight_layout()
 plt.show()
 
-
+# Shows the crosstab between smoking habits and gender. 
+crosstab = pd.crosstab(csv_data['gender'], csv_data['smoke100'])
+print(crosstab)
