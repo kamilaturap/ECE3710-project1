@@ -53,3 +53,21 @@ print(f"Proportion that has exercised in the past month: {prop_exercised:.2f}")
 # Shows the crosstab between smoking habits and gender. 
 crosstab = pd.crosstab(csv_data['gender'], csv_data['smoke100'])
 print(crosstab)
+
+# Find the mean and standard deviation of weight:
+weight_mean = csv_data["weight"].mean()
+weight_std = csv_data["weight"].std()
+print("Mean Weight:", weight_mean)
+print("Standard Deviation of Weight:", weight_std)
+
+# Calculate the bounds for one standard deviation
+lower_bound = weight_mean - weight_std
+upper_bound = weight_mean + weight_std
+
+# Count the number of weights within one standard deviation
+weights_within_one_std = csv_data[(csv_data["weight"] >= lower_bound) & (csv_data["weight"] <= upper_bound)].shape[0]
+total_weights = csv_data.shape[0]
+
+# Calculate the proportion of weights within one standard deviation
+proportion_within_one_std = weights_within_one_std / total_weights
+print("Proportion of weights within one standard deviation:", proportion_within_one_std)
